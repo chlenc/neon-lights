@@ -1,10 +1,22 @@
+// const sleep = (ms) => new Promise(r => setTimeout(r, ms))
+
 describe('here description', () => {
-    it('should open google', () => {
-      cy.visit("https://www.google.com/")
-      cy.get('input[name="q"]').type('remarkablemark{enter}');
-      cy.get('#search a')
-  .first()
-  .invoke('attr', 'href')
-  .then(href => console.log(href));
+
+    it('should open google page', () => {
+        cy.visit('https://google.com')
+        cy.get('input[name="q"]').type('визитки купить');
+        cy.get('form').submit()
+    })
+
+    it('gets first search result', () => {
+        cy.get('[data-text-ad="1"]')
+            .then(ads => {
+                ads.each((i, ad) => {
+                    const element = ad.getElementsByTagName('a').item(0)
+                    element.setAttribute('target', '_blank')
+                    element.click()
+                    console.log(element)
+                })
+            })
     });
 })

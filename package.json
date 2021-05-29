@@ -4,12 +4,14 @@
   "description": "test-cypress",
   "main": "index.js",
   "scripts": {
-    "cy:o": "cypress open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "my-server -p 3030",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3030 cy:run"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.2.0"
+    "cypress": "^7.2.0",
+    "start-server-and-test": "^1.12.3"
   }
 }
