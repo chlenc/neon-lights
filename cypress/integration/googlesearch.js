@@ -2,21 +2,26 @@
 
 describe('here description', () => {
 
-    it('should open google page', () => {
+    it('visit kasanie', () => {
         cy.visit('https://google.com')
-        cy.get('input[name="q"]').type('визитки купить');
-        cy.get('form').submit()
+        // cy.visit('https://xn--80aaplhu0a.xn--p1ai/')
     })
 
-    it('gets first search result', () => {
-        cy.get('[data-text-ad="1"]')
-            .then(ads => {
-                ads.each((i, ad) => {
-                    const element = ad.getElementsByTagName('a').item(0)
-                    element.setAttribute('target', '_blank')
-                    element.click()
-                    console.log(element)
-                })
-            })
-    });
+    // it('should open google page', () => {
+    //     cy.visit('https://google.com')
+    //     cy.get('input[name="q"]').type('визитки купить');
+    //     cy.get('form').submit()
+    // })
+    //
+    // it('gets first search result', () => {
+    //     cy.get('[data-text-ad="1"]')
+    //         .then(ads => {
+    //             ads.each((i, ad) => {
+    //                 const element = ad.getElementsByTagName('a').item(0)
+    //                 element.setAttribute('target', '_blank')
+    //                 element.click()
+    //                 console.log(element)
+    //             })
+    //         })
+    // });
 })

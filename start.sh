@@ -1,3 +1,4 @@
-jq -c '.[]' input.json | while read i; do
-    # do stuff with $i
+jq -c '.[]' proxies.json | while read i; do
+     export HTTP_PROXY=$i
+     cypress run
 done

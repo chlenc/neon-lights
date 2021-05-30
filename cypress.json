@@ -1,4 +1,8 @@
 {
   "defaultCommandTimeout": 20000,
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "auth": {
+    "username": "gnxBwk",
+    "access_key": "KjumGP"
+  }
 }
